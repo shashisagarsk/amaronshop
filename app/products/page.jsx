@@ -6,8 +6,7 @@ import { useRouter } from 'next/navigation';
 import { jwtDecode } from 'jwt-decode';
 import { ShoppingCart, Eye, X } from 'lucide-react';
 
-// --- CHANGE 1: Image URLs ko theek kiya gaya ---
-// width aur height ko alag se define kiya gaya hai
+
 const products = [
  {
    id: 1,
@@ -80,15 +79,13 @@ const handleAddToCart = (product, setToastMessage) => {
  localStorage.setItem(cartKey, JSON.stringify(cart));
  window.dispatchEvent(new Event("storage")); 
  
- // --- CHANGE 2: alert() ko toast message se replace kiya gaya ---
+
  setToastMessage(`"${product.name}" added to cart!`);
 };
 
-// --- UI Components ---
-
 function Toast({ message, onClose }) {
   useEffect(() => {
-    const timer = setTimeout(onClose, 3000); // 3 second ke baad toast gayab ho jayega
+    const timer = setTimeout(onClose, 3000); 
     return () => clearTimeout(timer);
   }, [onClose]);
 
@@ -104,7 +101,6 @@ function CustomDialog({ open, onClose, children }) {
  return (
    <div onClick={onClose} className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 transition-opacity">
      <div onClick={(e) => e.stopPropagation()} className="relative bg-white rounded-lg shadow-xl p-6 w-full max-w-2xl m-4">
-        {/* --- CHANGE 3: Modal ke liye close button add kiya gaya --- */}
         <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
           <X size={24} />
         </button>
@@ -155,7 +151,7 @@ function ProductCard({ product, onView, onAddToCart }) {
 function ProductModal({ product, onClose, onAddToCart }) {
  const router = useRouter();
  const addToCartAndGo = () => {
-   onAddToCart(); // Use the passed function to show toast
+   onAddToCart();
    router.push("/cart");
  };
 
@@ -198,7 +194,7 @@ function ProductModal({ product, onClose, onAddToCart }) {
  );
 }
 
-// --- Main Component (Default Export) ---
+
 export default function ProductGrid() {
  const [selectedProduct, setSelectedProduct] = useState(null);
  const [toastMessage, setToastMessage] = useState("");
