@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 import { Eye, EyeOff } from "lucide-react"
 import Link from "next/link"
 
-// Success Modal Component
+
 function SuccessModal({ open, onClose }) {
   const router = useRouter();
   if (!open) return null;
@@ -106,16 +106,13 @@ export default function SignupPage() {
   const errorInputClass = "block w-full px-3 py-2 border-red-500 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500";
 
   return (
-    // वर्टिकल पैडिंग (py-12 से py-8) को कम किया गया है
+  
     <div className=" bg-gray-50 flex items-center justify-center py-8 px-4">
       <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
-        {/* हेडर के नीचे का मार्जिन (mb-6 से mb-4) कम किया गया है */}
         <div className="text-center mb-4">
           <h2 className="text-2xl font-bold">Sign Up</h2>
           <p className="text-gray-600 mt-1">Create your account to start shopping</p>
         </div>
-
-        {/* फॉर्म एलिमेंट्स के बीच की स्पेसिंग (space-y-4 से space-y-3) कम की गई है */}
         <form onSubmit={handleSubmit} className="space-y-3">
           {errors.api && <p className="text-red-500 text-center text-sm">{errors.api}</p>}
           
@@ -163,8 +160,6 @@ export default function SignupPage() {
             {loading ? "Signing Up..." : "Sign Up"}
           </button>
         </form>
-
-        {/* नीचे का मार्जिन (mt-6 से mt-4) कम किया गया है */}
         <div className="mt-4 text-center">
           <p className="text-sm text-gray-600">
             Already have an account?{" "}
