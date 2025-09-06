@@ -6,7 +6,6 @@ export default function Footer() {
     <footer className="bg-gray-800 text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Company Info */}
           <div>
             <h3 className="text-xl font-bold mb-4">AmronShop</h3>
             <p className="text-gray-300 mb-4">Your one-stop destination for quality products at amazing prices.</p>
@@ -17,7 +16,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
@@ -38,8 +36,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
-          {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <div className="space-y-2">
