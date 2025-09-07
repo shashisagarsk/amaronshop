@@ -5,9 +5,9 @@ import Image from 'next/image';
 import { Trash2, Plus, Minus } from 'lucide-react';
 import { jwtDecode } from 'jwt-decode';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation'; // Import useRouter
+import { useRouter } from 'next/navigation'; 
 
-// Helper function to get user info from localStorage
+
 const getUser = () => {
   if (typeof window === "undefined") return null;
   const token = localStorage.getItem("token");
@@ -21,7 +21,7 @@ const getUser = () => {
   return null;
 };
 
-// Helper function to get the correct cart key
+
 const getCartKey = (user) => {
   if (user && (user.id || user.userId)) return `cart_${user.id || user.userId}`;
   if (user && user.email) return `cart_${user.email}`;
@@ -30,13 +30,13 @@ const getCartKey = (user) => {
 
 export default function CartPage() {
   const [cartItems, setCartItems] = useState([]);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // New state to track login status
-  const router = useRouter(); // Initialize router for navigation
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  const router = useRouter(); 
 
-  // This function now also checks and sets the login status
+ 
   const loadCartAndUserStatus = () => {
     const user = getUser();
-    setIsLoggedIn(!!user); // Set true if user exists, otherwise false
+    setIsLoggedIn(!!user);
     const cartKey = getCartKey(user);
     const storedCart = JSON.parse(localStorage.getItem(cartKey) || '[]');
     setCartItems(storedCart);
@@ -76,7 +76,7 @@ export default function CartPage() {
   };
 
   const handleCheckout = () => {
-    // This is where your actual checkout logic (e.g., payment) would go
+
     alert("Proceeding to checkout!");
   };
 
@@ -98,7 +98,7 @@ export default function CartPage() {
         </div>
       ) : (
         <div>
-          {/* Cart Items List */}
+          
           <div className="space-y-4">
             {cartItems.map((item) => (
               <div key={item.id} className="border-b pb-4 flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
@@ -144,14 +144,12 @@ export default function CartPage() {
             ))}
           </div>
 
-          {/* Cart Summary & Conditional Checkout Button */}
+         
           <div className="mt-8 flex flex-col items-end">
             <div className="text-2xl font-bold mb-4">
               <span>Total: </span>
               <span>${totalPrice}</span>
             </div>
-            
-            {/* --- CHANGE STARTS HERE --- */}
             {isLoggedIn ? (
               <button 
                 onClick={handleCheckout}
@@ -167,7 +165,6 @@ export default function CartPage() {
                 Login to Buy
               </button>
             )}
-            {/* --- CHANGE ENDS HERE --- */}
 
           </div>
         </div>
