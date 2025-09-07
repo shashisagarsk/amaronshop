@@ -1,3 +1,4 @@
+import dbConnect from '@/lib/dbConnect'
 import mongoose from 'mongoose'
 import { NextResponse } from 'next/server'
 import bcrypt from 'bcryptjs'
