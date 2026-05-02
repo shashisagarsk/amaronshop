@@ -21,8 +21,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
-// --- CHANGE 1: Image URLs ko theek kiya gaya ---
-// width aur height ko alag se define kiya gaya hai
 const products = [
     {
         id: 1,
@@ -65,7 +63,6 @@ const products = [
         category: "jeans"
     }
 ];
-// --- Helper Functions ---
 function getUser() {
     const token = localStorage.getItem("token");
     if (token) {
@@ -96,13 +93,11 @@ const handleAddToCart = (product, setToastMessage)=>{
     }
     localStorage.setItem(cartKey, JSON.stringify(cart));
     window.dispatchEvent(new Event("storage"));
-    // --- CHANGE 2: alert() ko toast message se replace kiya gaya ---
     setToastMessage(`"${product.name}" added to cart!`);
 };
-// --- UI Components ---
 function Toast({ message, onClose }) {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        const timer = setTimeout(onClose, 3000); // 3 second ke baad toast gayab ho jayega
+        const timer = setTimeout(onClose, 3000);
         return ()=>clearTimeout(timer);
     }, [
         onClose
@@ -112,7 +107,7 @@ function Toast({ message, onClose }) {
         children: message
     }, void 0, false, {
         fileName: "[project]/app/Home/featuredproduct.jsx",
-        lineNumber: 95,
+        lineNumber: 94,
         columnNumber: 5
     }, this);
 }
@@ -132,24 +127,24 @@ function CustomDialog({ open, onClose, children }) {
                         size: 24
                     }, void 0, false, {
                         fileName: "[project]/app/Home/featuredproduct.jsx",
-                        lineNumber: 108,
+                        lineNumber: 107,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Home/featuredproduct.jsx",
-                    lineNumber: 107,
+                    lineNumber: 106,
                     columnNumber: 9
                 }, this),
                 children
             ]
         }, void 0, true, {
             fileName: "[project]/app/Home/featuredproduct.jsx",
-            lineNumber: 105,
+            lineNumber: 104,
             columnNumber: 6
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/Home/featuredproduct.jsx",
-        lineNumber: 104,
+        lineNumber: 103,
         columnNumber: 4
     }, this);
 }
@@ -169,12 +164,12 @@ function ProductCard({ product, onView, onAddToCart }) {
                         className: "w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                     }, void 0, false, {
                         fileName: "[project]/app/Home/featuredproduct.jsx",
-                        lineNumber: 121,
+                        lineNumber: 120,
                         columnNumber: 10
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Home/featuredproduct.jsx",
-                    lineNumber: 120,
+                    lineNumber: 119,
                     columnNumber: 8
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -182,7 +177,7 @@ function ProductCard({ product, onView, onAddToCart }) {
                     children: product.name
                 }, void 0, false, {
                     fileName: "[project]/app/Home/featuredproduct.jsx",
-                    lineNumber: 129,
+                    lineNumber: 128,
                     columnNumber: 8
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -193,7 +188,7 @@ function ProductCard({ product, onView, onAddToCart }) {
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Home/featuredproduct.jsx",
-                    lineNumber: 130,
+                    lineNumber: 129,
                     columnNumber: 8
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -207,14 +202,14 @@ function ProductCard({ product, onView, onAddToCart }) {
                                     className: "h-4 w-4 mr-2"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Home/featuredproduct.jsx",
-                                    lineNumber: 137,
+                                    lineNumber: 136,
                                     columnNumber: 12
                                 }, this),
                                 "View"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Home/featuredproduct.jsx",
-                            lineNumber: 133,
+                            lineNumber: 132,
                             columnNumber: 10
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -225,38 +220,38 @@ function ProductCard({ product, onView, onAddToCart }) {
                                     className: "h-4 w-4 mr-2"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Home/featuredproduct.jsx",
-                                    lineNumber: 145,
+                                    lineNumber: 144,
                                     columnNumber: 12
                                 }, this),
                                 "Add"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Home/featuredproduct.jsx",
-                            lineNumber: 141,
+                            lineNumber: 140,
                             columnNumber: 10
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Home/featuredproduct.jsx",
-                    lineNumber: 132,
+                    lineNumber: 131,
                     columnNumber: 8
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/Home/featuredproduct.jsx",
-            lineNumber: 119,
+            lineNumber: 118,
             columnNumber: 6
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/Home/featuredproduct.jsx",
-        lineNumber: 118,
+        lineNumber: 117,
         columnNumber: 4
     }, this);
 }
 function ProductModal({ product, onClose, onAddToCart }) {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     const addToCartAndGo = ()=>{
-        onAddToCart(); // Use the passed function to show toast
+        onAddToCart();
         router.push("/cart");
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(CustomDialog, {
@@ -270,12 +265,12 @@ function ProductModal({ product, onClose, onAddToCart }) {
                     children: product.name
                 }, void 0, false, {
                     fileName: "[project]/app/Home/featuredproduct.jsx",
-                    lineNumber: 164,
+                    lineNumber: 163,
                     columnNumber: 8
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/Home/featuredproduct.jsx",
-                lineNumber: 163,
+                lineNumber: 162,
                 columnNumber: 6
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -291,12 +286,12 @@ function ProductModal({ product, onClose, onAddToCart }) {
                             className: "w-full h-80 object-cover rounded-lg"
                         }, void 0, false, {
                             fileName: "[project]/app/Home/featuredproduct.jsx",
-                            lineNumber: 168,
+                            lineNumber: 167,
                             columnNumber: 10
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/Home/featuredproduct.jsx",
-                        lineNumber: 167,
+                        lineNumber: 166,
                         columnNumber: 8
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -310,7 +305,7 @@ function ProductModal({ product, onClose, onAddToCart }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Home/featuredproduct.jsx",
-                                lineNumber: 177,
+                                lineNumber: 176,
                                 columnNumber: 10
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -318,7 +313,7 @@ function ProductModal({ product, onClose, onAddToCart }) {
                                 children: product.description
                             }, void 0, false, {
                                 fileName: "[project]/app/Home/featuredproduct.jsx",
-                                lineNumber: 178,
+                                lineNumber: 177,
                                 columnNumber: 10
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -332,7 +327,7 @@ function ProductModal({ product, onClose, onAddToCart }) {
                                                 children: "Category:"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Home/featuredproduct.jsx",
-                                                lineNumber: 181,
+                                                lineNumber: 180,
                                                 columnNumber: 14
                                             }, this),
                                             " ",
@@ -340,7 +335,7 @@ function ProductModal({ product, onClose, onAddToCart }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Home/featuredproduct.jsx",
-                                        lineNumber: 180,
+                                        lineNumber: 179,
                                         columnNumber: 12
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -351,7 +346,7 @@ function ProductModal({ product, onClose, onAddToCart }) {
                                                 children: "Product ID:"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Home/featuredproduct.jsx",
-                                                lineNumber: 184,
+                                                lineNumber: 183,
                                                 columnNumber: 14
                                             }, this),
                                             " #",
@@ -359,13 +354,13 @@ function ProductModal({ product, onClose, onAddToCart }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Home/featuredproduct.jsx",
-                                        lineNumber: 183,
+                                        lineNumber: 182,
                                         columnNumber: 12
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Home/featuredproduct.jsx",
-                                lineNumber: 179,
+                                lineNumber: 178,
                                 columnNumber: 10
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -376,32 +371,32 @@ function ProductModal({ product, onClose, onAddToCart }) {
                                         className: "h-5 w-5 mr-2"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Home/featuredproduct.jsx",
-                                        lineNumber: 191,
+                                        lineNumber: 190,
                                         columnNumber: 12
                                     }, this),
                                     "Add and Go to Cart"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Home/featuredproduct.jsx",
-                                lineNumber: 187,
+                                lineNumber: 186,
                                 columnNumber: 10
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Home/featuredproduct.jsx",
-                        lineNumber: 176,
+                        lineNumber: 175,
                         columnNumber: 8
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Home/featuredproduct.jsx",
-                lineNumber: 166,
+                lineNumber: 165,
                 columnNumber: 6
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/Home/featuredproduct.jsx",
-        lineNumber: 162,
+        lineNumber: 161,
         columnNumber: 4
     }, this);
 }
@@ -419,7 +414,7 @@ function ProductGrid() {
                         children: "Featured Products"
                     }, void 0, false, {
                         fileName: "[project]/app/Home/featuredproduct.jsx",
-                        lineNumber: 208,
+                        lineNumber: 207,
                         columnNumber: 8
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -430,18 +425,18 @@ function ProductGrid() {
                                 onAddToCart: ()=>handleAddToCart(product, setToastMessage)
                             }, product.id, false, {
                                 fileName: "[project]/app/Home/featuredproduct.jsx",
-                                lineNumber: 211,
+                                lineNumber: 210,
                                 columnNumber: 12
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/Home/featuredproduct.jsx",
-                        lineNumber: 209,
+                        lineNumber: 208,
                         columnNumber: 8
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Home/featuredproduct.jsx",
-                lineNumber: 207,
+                lineNumber: 206,
                 columnNumber: 6
             }, this),
             selectedProduct && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ProductModal, {
@@ -450,7 +445,7 @@ function ProductGrid() {
                 onAddToCart: ()=>handleAddToCart(selectedProduct, setToastMessage)
             }, void 0, false, {
                 fileName: "[project]/app/Home/featuredproduct.jsx",
-                lineNumber: 221,
+                lineNumber: 220,
                 columnNumber: 7
             }, this),
             toastMessage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Toast, {
@@ -458,13 +453,13 @@ function ProductGrid() {
                 onClose: ()=>setToastMessage("")
             }, void 0, false, {
                 fileName: "[project]/app/Home/featuredproduct.jsx",
-                lineNumber: 227,
+                lineNumber: 226,
                 columnNumber: 23
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/Home/featuredproduct.jsx",
-        lineNumber: 206,
+        lineNumber: 205,
         columnNumber: 4
     }, this);
 }

@@ -54,7 +54,7 @@ function Hero() {
                         children: "Shop Now"
                     }, void 0, false, {
                         fileName: "[project]/app/Home/hero.jsx",
-                        lineNumber: 9,
+                        lineNumber: 8,
                         columnNumber: 9
                     }, this)
                 ]

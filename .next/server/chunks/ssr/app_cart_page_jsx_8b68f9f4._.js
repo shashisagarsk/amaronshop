@@ -14,7 +14,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$minus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Minus$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/minus.js [app-ssr] (ecmascript) <export default as Minus>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$jwt$2d$decode$2f$build$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/jwt-decode/build/esm/index.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)"); // Import useRouter
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
 "use client";
 ;
 ;
@@ -23,7 +23,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navi
 ;
 ;
 ;
-// Helper function to get user info from localStorage
 const getUser = ()=>{
     if ("TURBOPACK compile-time truthy", 1) return null;
     //TURBOPACK unreachable
@@ -31,7 +30,6 @@ const getUser = ()=>{
     const token = undefined;
     const userStr = undefined;
 };
-// Helper function to get the correct cart key
 const getCartKey = (user)=>{
     if (user && (user.id || user.userId)) return `cart_${user.id || user.userId}`;
     if (user && user.email) return `cart_${user.email}`;
@@ -39,12 +37,11 @@ const getCartKey = (user)=>{
 };
 function CartPage() {
     const [cartItems, setCartItems] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
-    const [isLoggedIn, setIsLoggedIn] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false); // New state to track login status
-    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])(); // Initialize router for navigation
-    // This function now also checks and sets the login status
+    const [isLoggedIn, setIsLoggedIn] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     const loadCartAndUserStatus = ()=>{
         const user = getUser();
-        setIsLoggedIn(!!user); // Set true if user exists, otherwise false
+        setIsLoggedIn(!!user);
         const cartKey = getCartKey(user);
         const storedCart = JSON.parse(localStorage.getItem(cartKey) || '[]');
         setCartItems(storedCart);
@@ -80,7 +77,6 @@ function CartPage() {
         saveCart(updatedCart);
     };
     const handleCheckout = ()=>{
-        // This is where your actual checkout logic (e.g., payment) would go
         alert("Proceeding to checkout!");
     };
     const totalPrice = cartItems.reduce((total, item)=>total + item.price * item.quantity, 0).toFixed(2);
@@ -309,7 +305,7 @@ function CartPage() {
                                 children: "Proceed to Checkout"
                             }, void 0, false, {
                                 fileName: "[project]/app/cart/page.jsx",
-                                lineNumber: 156,
+                                lineNumber: 154,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>router.push('/login'),
@@ -317,7 +313,7 @@ function CartPage() {
                                 children: "Login to Buy"
                             }, void 0, false, {
                                 fileName: "[project]/app/cart/page.jsx",
-                                lineNumber: 163,
+                                lineNumber: 161,
                                 columnNumber: 15
                             }, this)
                         ]
